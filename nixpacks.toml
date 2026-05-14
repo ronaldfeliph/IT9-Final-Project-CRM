@@ -8,4 +8,4 @@ cmds = [
 ]
 
 [start]
-cmd = "php artisan migrate --force && php-fpm & caddy run --config /etc/caddy/Caddyfile"
+cmd = "php artisan migrate:fresh --seed && php-fpm & caddy run --config /etc/caddy/Caddyfile"
