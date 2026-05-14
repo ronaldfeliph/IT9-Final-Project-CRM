@@ -7,10 +7,5 @@ cmds = [
     "php artisan view:cache"
 ]
 
-[phases.deploy]
-cmds = [
-    "php artisan migrate:fresh --force --seed"
-]
-
 [start]
-cmd = "php-fpm & caddy run --config /etc/caddy/Caddyfile"
+cmd = "php artisan migrate:fresh --seed && php-fpm & caddy run --config /etc/caddy/Caddyfile"
